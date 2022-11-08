@@ -1,0 +1,31 @@
+{
+  "name": "signalwire-sdk-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "test": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.2.2",
+    "jest": "^29.3.0",
+    "microbundle": "^0.15.1",
+    "ts-jest": "^29.0.3"
+  },
+  "dependencies": {
+    "@types/ws": "^8.5.3",
+    "jest-cli": "^29.2.2",
+    "jest-websocket-mock": "^2.4.0",
+    "ws": "^8.10.0"
+  }
+}
