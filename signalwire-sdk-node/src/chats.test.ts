@@ -1,6 +1,6 @@
 // chats.test.ts
 import "jest";
-import { Chats } from "./chats/index";
+import { Chats } from "./chats/chats";
 import { NewMessage } from "./shared/types";
 import { existsSync, readFileSync } from "fs";
 

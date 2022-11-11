@@ -1,15 +1,13 @@
-import { WebSocket } from "ws";
-import { configuration } from "./configuration";
-import { NewMessage } from "./shared/types";
+import { configuration } from "./../shared/configuration";
+import { NewMessage } from "../shared/types";
 import { writeFile, appendFile } from "fs";
+import { WebSocket } from "ws";
 
-export class Base {
-  private baseUrl: string = `${configuration.Url}${configuration.ApiKey}`;
+export class ChatsBase {
+  private baseUrl = `${configuration.Url}${configuration.ApiKey}`;
   protected ws = new WebSocket(`${this.baseUrl}:${configuration.Port}`);
 
-  constructor() {}
-
-  triggerOn(event: string): any {
+  public triggerOn(event: string): any {
     return new Promise((resolve, reject) => {
       this.ws.on(event, (data) => {
         appendFile("log.txt", `RECV:${data}\n`, function (err) {
@@ -27,8 +25,8 @@ export class Base {
     });
   }
 
-  async triggerSend(message: NewMessage) {
-    await this.ws.on("open", () => {
+  triggerSend(message: NewMessage) {
+    this.ws.on("open", () => {
       this.ws.send(
         JSON.stringify({
           id: message.id,

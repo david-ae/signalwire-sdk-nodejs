@@ -10,6 +10,6 @@
     "baseUrl": "./",
     "incremental": true
   },
-  "include": ["src/**/*", "src/chats.test.ts"],
+  "include": ["src/**/*", "src/chats.test.ts", "src/shared/configuration.ts"],
   "exclude": ["node_modules", "test", "lib", "**/*spec.ts"]
 }
