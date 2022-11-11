@@ -13,5 +13,3 @@ export type NewMessage = {
 export type Config = {
   apiKey: string;
 };
-
-export type c = {};

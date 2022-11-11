@@ -1,8 +1,8 @@
-import { Base } from "./base";
-import { Chats } from "./chats";
+import { ChatsBase } from "./chats/chatsbase";
+import { Chats } from "./chats/chats";
 import { applyMixins } from "./utils";
 
-class Messaging extends Base {}
+class Messaging extends ChatsBase {}
 interface Messaging extends Chats {}
 
 applyMixins(Messaging, [Chats]);

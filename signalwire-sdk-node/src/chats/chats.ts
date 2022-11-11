@@ -1,13 +1,13 @@
 // chats.ts
-import { IBase } from "../interfaces/base.interface";
-import { Base } from "../base";
+import { ISDK } from "../interfaces/sdk.interface";
+import { ChatsBase } from "./chatsbase";
 import { NewMessage } from "../shared/types";
 
 export interface Chat {
   (message: any): void;
 }
 
-export class Chats extends Base implements IBase {
+export class Chats extends ChatsBase implements ISDK {
   async on(event: string, callback: Function) {
     const message = await this.triggerOn(event);
     return callback(message.toString());
