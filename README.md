@@ -6,7 +6,7 @@
 
 # **Test Apps**
 *signalwire-sdk-node-test for Nodejs SDK*<br/>
-*public folder in signalwire-sdk-browserjs for Browserjs SDK*
+*sdktest.js in public folder in signalwire-sdk-browserjs for Browserjs SDK*
 
 # **Instructions for testing**
 
